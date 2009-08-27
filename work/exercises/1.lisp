@@ -1,6 +1,6 @@
 (load "check-equal.lisp")
 
-; Finds the last element of a list
+; Finds the last cons cell of a list
 (defun my-last (lst)
   (if (null (cdr lst))
     lst
