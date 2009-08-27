@@ -1,14 +1,13 @@
 ; There's gotta be a better way to do this
 (let ((last-result :success))
   (defun print-result (current-result &rest messages)
-    (let ()
       (if (or (equal last-result :failure) 
               (equal current-result :failure))
         (format t "~%"))
       (if (equal current-result :success)
         (format t ".")
         (format t " *** ERROR: ~?" (car messages) (cdr messages)))
-      (setq last-result current-result))))
+      (setf last-result current-result)))
 
 (defun print-success ()
   (print-result :success))

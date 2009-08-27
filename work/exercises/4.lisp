@@ -14,5 +14,5 @@
 
 
 (check-equal 5 (number-of-elements '(1 2 3 4 5)))
-(check-equal 3 (number-of-elements '()))
+(check-equal 0 (number-of-elements '()))
 (check-equal 1 (number-of-elements '(1)))
