@@ -1,6 +1,5 @@
 ; There's gotta be a better way to do this
-(let ()
-  (setq last-result :success)
+(let ((last-result :success))
   (defun print-result (current-result &rest messages)
     (let ()
       (if (or (equal last-result :failure) 
