@@ -5,12 +5,12 @@
 ; I also tend to always use recursion?
 (defun number-of-elements (lst)
   ; Sums up the rest of the elements of the list
-  (defun current-count (lsta i)
-    (if (null lsta)
-      i
-      (current-count (cdr lsta) (+ 1 i))))
-  ; Starts off the list count with 0
-  (current-count lst 0 ))
+  (labels ((current-count (lst i)
+                          (if (null lst)
+                            i
+                            (current-count (cdr lst) (+ 1 i)))))
+    ; Starts off the list count with 0
+    (current-count lst 0 )))
 
 
 (check-equal 5 (number-of-elements '(1 2 3 4 5)))
