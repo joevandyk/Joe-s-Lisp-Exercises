@@ -12,7 +12,20 @@
     ; Starts off the list count with 0
     (current-count lst 0 )))
 
-
 (check-equal 5 (number-of-elements '(1 2 3 4 5)))
 (check-equal 0 (number-of-elements '()))
 (check-equal 1 (number-of-elements '(1)))
+
+
+
+; Same, but iterate
+(defun number-of-elements-iterate (lst)
+  ; Sums up the rest of the elements of the list
+  (let ((count 0))
+    (dolist (element lst)
+      (setf count (+ count 1)))
+    count))
+
+(check-equal 5 (number-of-elements-iterate '(1 2 3 4 5)))
+(check-equal 0 (number-of-elements-iterate '()))
+(check-equal 1 (number-of-elements-iterate '(1)))
